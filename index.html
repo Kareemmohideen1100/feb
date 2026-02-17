@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Special Day ❤️</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 38px;
+}
+
+#countdown {
+    font-size: 45px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Heart Button */
+.heart-btn {
+    display: none;
+    font-size: 75px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* Message Popup */
+.popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 85%;
+    background: white;
+    color: #444;
+    padding: 25px;
+    overflow-y: auto;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+.popup h2 {
+    color: #ff4d6d;
+}
+
+.popup p {
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ff4d6d;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    h1 { font-size: 24px; }
+    #countdown { font-size: 30px; }
+    .popup p { font-size: 16px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>⏳ Countdown For Feb 21 ❤️</h1>
+<div id="countdown"></div>
+
+<button class="heart-btn" id="heartBtn">❤️</button>
+
+<div class="popup" id="popup">
+<span class="close" onclick="closePopup()">✖</span>
+
+<h2>Happy Decade My Beloved ❤️</h2>
+
+<p>
+Happy decade, my beloved ❤️<br><br>
+
+It's been such great years. Most of the time we were in contact, and during the other times, I kept cherishing the moments when we were connected.<br><br>
+
+Even if a hundred kilograms of gold were right in front of my eyes, it wouldn't catch my attention if you were beside me, because my love for you is more precious than gold itself.<br><br>
+
+I don’t know what good you did that brought me into your life hehe, but I hope you like me being in it forever (i know ipo ne enna thitura )<br><br>
+
+I wanted to add all the pictures we took in the past years. Ummm… I just gave a kottu on my head which brought me back from lotoflovenoorland (its a beautiful land where we both are happy in my imagination )<br><br>
+
+But then I realized there were no pictures all this time, which made me feel a little sad. Later, I understood — Insha Allah, soon I will be receiving you from your dad (hehe)<br><br>
+
+I wanted to celebrate this greatly, and I’m happy that our ten years came during Ramzan. So I’ll be thanking Allah for giving me to you (okay thittatha i just said vice versa hehe)<br><br>
+
+Happy anniversary ❤️<br><br>
+
+If I had to describe you, it wouldn't fit here. I don’t know how everything is going to go, but my only trust is in Allah.<br><br>
+
+From the bottom of my heart, I miss you, and I hope we will spend the rest of our lives building a beautiful family together and becoming successful couples both in dunya and akhira.<br><br>
+
+Ummmm… I wanted to say a lot, but while typing this, I just wished we could pray together, and after that, I could give you a tight hug and a kiss on your forehead (porukkinu sollatha ) I meant it in a beautiful way.<br><br>
+
+At the end, you might say this is all cringe, and I know it is. But my love isn't — it's pure like Zam Zam water hehe.<br><br>
+
+Just remember, you always have me and my prayers. Even when I can't be there, my prayers will always be there for you.<br><br>
+
+Miss you… tata bye ❤️
+</p>
+
+</div>
+
+<script>
+
+
+// Countdown till Feb 21 midnight
+const targetDate = new Date("February 21, 2026 00:00:00").getTime();
+
+
+const countdown = document.getElementById("countdown");
+const heartBtn = document.getElementById("heartBtn");
+const popup = document.getElementById("popup");
+
+const timer = setInterval(() => {
+
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+        clearInterval(timer);
+        countdown.innerHTML = "It's Time ❤️";
+        heartBtn.style.display = "block";
+        return;
+    }
+
+    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+    countdown.innerHTML = `${minutes}m ${seconds}s`;
+
+}, 1000);
+
+heartBtn.onclick = () => popup.style.display = "block";
+
+function closePopup() {
+    popup.style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
